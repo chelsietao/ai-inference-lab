@@ -1,0 +1,8 @@
+# Colab already ships torch/torchvision; pip will keep those if they satisfy the minimum versions.
+torch>=2.0
+torchvision>=0.15
+numpy
+pandas
+matplotlib
+pillow
+pytest

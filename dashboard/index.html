@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Inference Lab</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <strong>AI Inference Lab</strong>
+    <nav>
+      <a href="#overview">Overview</a><a href="#experiments">Experiments</a>
+      <a href="#results">Benchmark Results</a><a href="#concepts">Concept Explorer</a>
+      <a href="#roadmap">Roadmap</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+<section id="overview">
+  <h1>AI Inference Lab</h1>
+  <p class="sub">An Interactive Playground for GPU Computing and AI Inference Optimization</p>
+  <p>在 Google Colab(免費)上執行真實的 pretrained model,量測 CPU / GPU inference,並理解 latency、throughput、batch size 與記憶體。</p>
+  <p class="notice"><strong>這個網站不會執行 inference。</strong>下方圖表只是顯示「事先在特定硬體上量測並匯出」的 benchmark JSON,不是即時 GPU 運算。要自己量測,請開啟 Colab notebook。</p>
+</section>
+
+<section id="experiments">
+  <h2>Experiments</h2>
+  <div class="cards">
+    <article><h3>Lab 01 · PyTorch Inference</h3><p>MobileNetV3-Small 影像分類、Top-5、hardware 偵測。</p><p class="meta">Hardware: CPU 即可 · GPU 選用</p><a href="https://colab.research.google.com/github/chelsietao/ai-inference-lab/blob/main/notebooks/01_pytorch_inference.ipynb">Open in Colab</a></article>
+    <article><h3>Lab 02 · CPU vs GPU</h3><p>Warm-up、synchronize、latency / throughput / speedup。</p><p class="meta">Hardware: CPU 必跑 · GPU 部分需 CUDA</p><a href="https://colab.research.google.com/github/chelsietao/ai-inference-lab/blob/main/notebooks/02_cpu_vs_gpu.ipynb">Open in Colab</a></article>
+    <article><h3>Lab 03 · Batch Size</h3><p>Batch 1–32 的 per-batch / per-image latency 與 throughput。</p><p class="meta">Hardware: CPU 即可 · OOM 自動處理</p><a href="https://colab.research.google.com/github/chelsietao/ai-inference-lab/blob/main/notebooks/03_batch_size_benchmark.ipynb">Open in Colab</a></article>
+  </div>
+</section>
+
+<section id="results">
+  <h2>Benchmark Results</h2>
+  <p class="notice warn"><strong>Prerecorded results</strong>(非 live)。資料來源:<code id="src">載入中…</code>。結果只代表該筆紀錄的硬體與環境,<strong>不可</strong>與其他環境直接比較。</p>
+  <label class="load">載入你自己的 results JSON(由 notebook 匯出):<input type="file" id="file" accept=".json"></label>
+  <div id="empty" class="empty" hidden>尚未載入資料。若直接以 file:// 開啟,瀏覽器會阻擋自動載入;請用上方按鈕選擇 JSON,或以 <code>python -m http.server</code> 提供服務。</div>
+  <div id="hw"></div>
+  <div class="charts">
+    <figure><div id="c-lat"></div></figure>
+    <figure><div id="c-thr"></div></figure>
+  </div>
+  <div id="table"></div>
+  <p class="small">方法:每次迭代以 <code>time.perf_counter()</code> 計時,CUDA 於前後 <code>synchronize</code>;排除 model 載入與 preprocessing;先 warm-up 再量測。詳見 <a href="https://github.com/chelsietao/ai-inference-lab/blob/main/docs/benchmarking.md">docs/benchmarking.md</a>。</p>
+</section>
+
+<section id="concepts">
+  <h2>Concept Explorer</h2>
+  <div class="cards">
+    <article><h3>Latency vs Throughput</h3><p>單一請求多久 vs 單位時間處理多少。</p><p class="meta">→ Lab 02, Lab 03</p></article>
+    <article><h3>Asynchronous execution</h3><p>GPU 非同步執行,計時必須 synchronize。</p><p class="meta">→ Lab 01, Lab 02</p></article>
+    <article><h3>Batching</h3><p>更大的 batch 提高 utilization,但增加單批等待時間與記憶體。</p><p class="meta">→ Lab 03</p></article>
+    <article><h3>Warm-up / Cold start</h3><p>初次執行包含初始化成本,不代表 steady-state。</p><p class="meta">→ Lab 01, Lab 02</p></article>
+  </div>
+  <p class="small">更多名詞見 <a href="https://github.com/chelsietao/ai-inference-lab/blob/main/docs/glossary.md">glossary</a>。概念背景可搭配 <a href="https://chelsietao.github.io/ai-rookie-skill-tree-lab/">AI Engineering Atlas</a>(獨立專案)。</p>
+</section>
+
+<section id="roadmap">
+  <h2>Roadmap</h2>
+  <ol class="road">
+    <li><b>Phase 1 — Image classification &amp; benchmarking</b> <em>(v0.1,已實作)</em></li>
+    <li><b>Phase 2 — Inference optimization</b> ONNX Runtime、FP16、quantization <em>(planned)</em></li>
+    <li><b>Phase 3 — GPU computing</b> memory hierarchy、matmul、profiling <em>(planned)</em></li>
+    <li><b>Phase 4 — Kernel optimization</b> Triton <em>(planned)</em></li>
+    <li><b>Phase 5 — TensorRT</b> <em>(planned)</em></li>
+    <li><b>Phase 6 — LLM inference</b> <em>(planned)</em></li>
+  </ol>
+</section>
+</main>
+<footer class="wrap small">MIT License · <a href="https://github.com/chelsietao/ai-inference-lab">GitHub</a></footer>
+<script src="app.js"></script>
+</body>
+</html>
