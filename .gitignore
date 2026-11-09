@@ -21,8 +21,7 @@ dist/
 *.engine
 *.safetensors
 .cache/
-data/
+/data/
 # Benchmark outputs are local by default; commit curated files explicitly (git add -f)
 results/*
 !results/README.md
-!results/reference/

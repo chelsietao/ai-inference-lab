@@ -1,0 +1,31 @@
+:root{--fg:#111827;--muted:#6b7280;--line:#e5e7eb;--bg:#fff;--soft:#f9fafb;--accent:#16a34a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Inter","Noto Sans TC",sans-serif}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+.top{border-bottom:1px solid var(--line);position:sticky;top:0;background:#fffffff2;z-index:2}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;padding-top:12px;padding-bottom:12px}
+nav a{margin-left:18px;color:var(--muted);text-decoration:none;font-size:14px}
+nav a:hover{color:var(--fg)}
+section{padding:48px 0 12px}
+h1{font-size:34px;margin:0}h2{font-size:22px;margin:0 0 16px}h3{font-size:16px;margin:0 0 6px}
+.sub{color:var(--muted);margin:4px 0 20px}
+.notice{border:1px solid var(--line);background:var(--soft);border-radius:8px;padding:12px 16px;font-size:14px}
+.notice.warn{border-color:#fcd34d;background:#fffbeb}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+article{border:1px solid var(--line);border-radius:10px;padding:18px}
+article p{margin:4px 0;font-size:14px}.meta{color:var(--muted)}
+a{color:#2563eb}
+.charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:16px;margin:16px 0}
+figure{margin:0;border:1px solid var(--line);border-radius:10px;padding:12px}
+table{border-collapse:collapse;width:100%;font-size:13px;margin:12px 0}
+th,td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:right}th:first-child,td:first-child{text-align:left}
+th{color:var(--muted);font-weight:600}
+.table-wrap{overflow-x:auto}
+code{background:var(--soft);padding:1px 5px;border-radius:4px;font-size:13px}
+.small{color:var(--muted);font-size:13px}.empty{padding:16px;border:1px dashed var(--line);border-radius:8px;color:var(--muted)}
+.load{display:block;margin:12px 0;font-size:14px}
+.road li{margin:8px 0}.road em{color:var(--muted)}
+#hw{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 12px;font-size:12px;color:var(--muted)}
+footer{padding:40px 20px}
+svg text{font:12px -apple-system,sans-serif;fill:#374151}

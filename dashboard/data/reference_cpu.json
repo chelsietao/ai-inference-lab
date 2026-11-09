@@ -1,0 +1,340 @@
+{
+  "schema_version": "1.0",
+  "records": [
+    {
+      "model": {
+        "name": "mobilenet_v3_small",
+        "pretrained": true,
+        "load_time_s": 0.0299
+      },
+      "framework": {
+        "pytorch": "2.8.0",
+        "torchvision": "0.23.0"
+      },
+      "hardware": {
+        "device_type": "cpu",
+        "device_name": "Apple M5 Pro",
+        "cuda_available": false,
+        "cuda_version": null,
+        "pytorch_version": "2.8.0",
+        "torchvision_version": "0.23.0",
+        "python_version": "3.9.6",
+        "platform": "macOS-26.6.2-arm64-arm-64bit",
+        "runtime_environment": "local",
+        "cpu_count": 15,
+        "gpu_total_memory_mb": null,
+        "supported_precisions": [
+          "fp32"
+        ],
+        "notes": [
+          "CUDA is not available, so no NVIDIA GPU experiments can run. In Colab, use Runtime > Change runtime type > T4 GPU."
+        ]
+      },
+      "backend": "pytorch",
+      "precision": "fp32",
+      "input_shape": [
+        1,
+        3,
+        224,
+        224
+      ],
+      "batch_size": 1,
+      "config": {
+        "device": "cpu",
+        "warmup_iters": 5,
+        "measure_iters": 50,
+        "seed": 0,
+        "memory_note": "Peak memory is not measured on CPU/MPS in this version (value is null)."
+      },
+      "metrics": {
+        "mean_ms": 39.633414980000026,
+        "median_ms": 38.94337449999996,
+        "p90_ms": 41.628316599999906,
+        "p95_ms": 42.14716440000012,
+        "min_ms": 38.16370799999991,
+        "max_ms": 45.04425000000012,
+        "std_ms": 1.6539926016779827,
+        "cold_start_ms": 40.70358299999999,
+        "per_image_mean_ms": 39.633414980000026,
+        "per_image_median_ms": 38.94337449999996,
+        "throughput_images_per_sec": 25.231234818009604,
+        "gpu_baseline_allocated_mb": null,
+        "gpu_peak_allocated_mb": null
+      },
+      "methodology": "Per-iteration wall-clock latency via time.perf_counter() around one forward pass under torch.inference_mode() with model.eval(). On CUDA, torch.cuda.synchronize() is called before starting and after finishing every timed iteration so asynchronous kernel execution is fully counted. Model loading, weight download, input creation and preprocessing are excluded. The first forward call (cold start) is timed separately and warm-up iterations are discarded; reported statistics describe steady-state latency of one batch. Throughput = batch_size / mean batch latency. Inputs are seeded random tensors of a fixed shape. Latency units: milliseconds; throughput units: images/second.",
+      "errors": [],
+      "warnings": [],
+      "experiment_id": "7fbbc86ddb9e",
+      "timestamp": "2026-11-09T11:54:48+00:00",
+      "schema_version": "1.0"
+    },
+    {
+      "model": {
+        "name": "mobilenet_v3_small",
+        "pretrained": true,
+        "load_time_s": 0.0299
+      },
+      "framework": {
+        "pytorch": "2.8.0",
+        "torchvision": "0.23.0"
+      },
+      "hardware": {
+        "device_type": "cpu",
+        "device_name": "Apple M5 Pro",
+        "cuda_available": false,
+        "cuda_version": null,
+        "pytorch_version": "2.8.0",
+        "torchvision_version": "0.23.0",
+        "python_version": "3.9.6",
+        "platform": "macOS-26.6.2-arm64-arm-64bit",
+        "runtime_environment": "local",
+        "cpu_count": 15,
+        "gpu_total_memory_mb": null,
+        "supported_precisions": [
+          "fp32"
+        ],
+        "notes": [
+          "CUDA is not available, so no NVIDIA GPU experiments can run. In Colab, use Runtime > Change runtime type > T4 GPU."
+        ]
+      },
+      "backend": "pytorch",
+      "precision": "fp32",
+      "input_shape": [
+        4,
+        3,
+        224,
+        224
+      ],
+      "batch_size": 4,
+      "config": {
+        "device": "cpu",
+        "warmup_iters": 5,
+        "measure_iters": 50,
+        "seed": 0,
+        "memory_note": "Peak memory is not measured on CPU/MPS in this version (value is null)."
+      },
+      "metrics": {
+        "mean_ms": 87.96436824000007,
+        "median_ms": 88.08635399999964,
+        "p90_ms": 93.0727131000003,
+        "p95_ms": 93.53227690000026,
+        "min_ms": 81.10683299999977,
+        "max_ms": 96.79633299999946,
+        "std_ms": 3.960198620430067,
+        "cold_start_ms": 86.23129199999991,
+        "per_image_mean_ms": 21.991092060000017,
+        "per_image_median_ms": 22.02158849999991,
+        "throughput_images_per_sec": 45.472957744509536,
+        "gpu_baseline_allocated_mb": null,
+        "gpu_peak_allocated_mb": null
+      },
+      "methodology": "Per-iteration wall-clock latency via time.perf_counter() around one forward pass under torch.inference_mode() with model.eval(). On CUDA, torch.cuda.synchronize() is called before starting and after finishing every timed iteration so asynchronous kernel execution is fully counted. Model loading, weight download, input creation and preprocessing are excluded. The first forward call (cold start) is timed separately and warm-up iterations are discarded; reported statistics describe steady-state latency of one batch. Throughput = batch_size / mean batch latency. Inputs are seeded random tensors of a fixed shape. Latency units: milliseconds; throughput units: images/second.",
+      "errors": [],
+      "warnings": [],
+      "experiment_id": "f0b4c6ff4c9d",
+      "timestamp": "2026-11-09T11:54:50+00:00",
+      "schema_version": "1.0"
+    },
+    {
+      "model": {
+        "name": "mobilenet_v3_small",
+        "pretrained": true,
+        "load_time_s": 0.0299
+      },
+      "framework": {
+        "pytorch": "2.8.0",
+        "torchvision": "0.23.0"
+      },
+      "hardware": {
+        "device_type": "cpu",
+        "device_name": "Apple M5 Pro",
+        "cuda_available": false,
+        "cuda_version": null,
+        "pytorch_version": "2.8.0",
+        "torchvision_version": "0.23.0",
+        "python_version": "3.9.6",
+        "platform": "macOS-26.6.2-arm64-arm-64bit",
+        "runtime_environment": "local",
+        "cpu_count": 15,
+        "gpu_total_memory_mb": null,
+        "supported_precisions": [
+          "fp32"
+        ],
+        "notes": [
+          "CUDA is not available, so no NVIDIA GPU experiments can run. In Colab, use Runtime > Change runtime type > T4 GPU."
+        ]
+      },
+      "backend": "pytorch",
+      "precision": "fp32",
+      "input_shape": [
+        8,
+        3,
+        224,
+        224
+      ],
+      "batch_size": 8,
+      "config": {
+        "device": "cpu",
+        "warmup_iters": 5,
+        "measure_iters": 50,
+        "seed": 0,
+        "memory_note": "Peak memory is not measured on CPU/MPS in this version (value is null)."
+      },
+      "metrics": {
+        "mean_ms": 100.91047664000016,
+        "median_ms": 100.15535399999908,
+        "p90_ms": 107.68339999999928,
+        "p95_ms": 110.99292704999968,
+        "min_ms": 93.59199999999923,
+        "max_ms": 115.47954200000099,
+        "std_ms": 4.945623107479601,
+        "cold_start_ms": 110.38037500000009,
+        "per_image_mean_ms": 12.61380958000002,
+        "per_image_median_ms": 12.519419249999885,
+        "throughput_images_per_sec": 79.2781905940266,
+        "gpu_baseline_allocated_mb": null,
+        "gpu_peak_allocated_mb": null
+      },
+      "methodology": "Per-iteration wall-clock latency via time.perf_counter() around one forward pass under torch.inference_mode() with model.eval(). On CUDA, torch.cuda.synchronize() is called before starting and after finishing every timed iteration so asynchronous kernel execution is fully counted. Model loading, weight download, input creation and preprocessing are excluded. The first forward call (cold start) is timed separately and warm-up iterations are discarded; reported statistics describe steady-state latency of one batch. Throughput = batch_size / mean batch latency. Inputs are seeded random tensors of a fixed shape. Latency units: milliseconds; throughput units: images/second.",
+      "errors": [],
+      "warnings": [],
+      "experiment_id": "3ed99ba143b9",
+      "timestamp": "2026-11-09T11:54:55+00:00",
+      "schema_version": "1.0"
+    },
+    {
+      "model": {
+        "name": "mobilenet_v3_small",
+        "pretrained": true,
+        "load_time_s": 0.0299
+      },
+      "framework": {
+        "pytorch": "2.8.0",
+        "torchvision": "0.23.0"
+      },
+      "hardware": {
+        "device_type": "cpu",
+        "device_name": "Apple M5 Pro",
+        "cuda_available": false,
+        "cuda_version": null,
+        "pytorch_version": "2.8.0",
+        "torchvision_version": "0.23.0",
+        "python_version": "3.9.6",
+        "platform": "macOS-26.6.2-arm64-arm-64bit",
+        "runtime_environment": "local",
+        "cpu_count": 15,
+        "gpu_total_memory_mb": null,
+        "supported_precisions": [
+          "fp32"
+        ],
+        "notes": [
+          "CUDA is not available, so no NVIDIA GPU experiments can run. In Colab, use Runtime > Change runtime type > T4 GPU."
+        ]
+      },
+      "backend": "pytorch",
+      "precision": "fp32",
+      "input_shape": [
+        16,
+        3,
+        224,
+        224
+      ],
+      "batch_size": 16,
+      "config": {
+        "device": "cpu",
+        "warmup_iters": 5,
+        "measure_iters": 50,
+        "seed": 0,
+        "memory_note": "Peak memory is not measured on CPU/MPS in this version (value is null)."
+      },
+      "metrics": {
+        "mean_ms": 216.25880259999974,
+        "median_ms": 212.44404150000128,
+        "p90_ms": 225.50100899999885,
+        "p95_ms": 240.35659389999802,
+        "min_ms": 201.6682920000008,
+        "max_ms": 277.975209000001,
+        "std_ms": 15.17348573418415,
+        "cold_start_ms": 214.01875000000103,
+        "per_image_mean_ms": 13.516175162499984,
+        "per_image_median_ms": 13.27775259375008,
+        "throughput_images_per_sec": 73.98542768034368,
+        "gpu_baseline_allocated_mb": null,
+        "gpu_peak_allocated_mb": null
+      },
+      "methodology": "Per-iteration wall-clock latency via time.perf_counter() around one forward pass under torch.inference_mode() with model.eval(). On CUDA, torch.cuda.synchronize() is called before starting and after finishing every timed iteration so asynchronous kernel execution is fully counted. Model loading, weight download, input creation and preprocessing are excluded. The first forward call (cold start) is timed separately and warm-up iterations are discarded; reported statistics describe steady-state latency of one batch. Throughput = batch_size / mean batch latency. Inputs are seeded random tensors of a fixed shape. Latency units: milliseconds; throughput units: images/second.",
+      "errors": [],
+      "warnings": [],
+      "experiment_id": "3204bddf8bbe",
+      "timestamp": "2026-11-09T11:55:01+00:00",
+      "schema_version": "1.0"
+    },
+    {
+      "model": {
+        "name": "mobilenet_v3_small",
+        "pretrained": true,
+        "load_time_s": 0.0299
+      },
+      "framework": {
+        "pytorch": "2.8.0",
+        "torchvision": "0.23.0"
+      },
+      "hardware": {
+        "device_type": "cpu",
+        "device_name": "Apple M5 Pro",
+        "cuda_available": false,
+        "cuda_version": null,
+        "pytorch_version": "2.8.0",
+        "torchvision_version": "0.23.0",
+        "python_version": "3.9.6",
+        "platform": "macOS-26.6.2-arm64-arm-64bit",
+        "runtime_environment": "local",
+        "cpu_count": 15,
+        "gpu_total_memory_mb": null,
+        "supported_precisions": [
+          "fp32"
+        ],
+        "notes": [
+          "CUDA is not available, so no NVIDIA GPU experiments can run. In Colab, use Runtime > Change runtime type > T4 GPU."
+        ]
+      },
+      "backend": "pytorch",
+      "precision": "fp32",
+      "input_shape": [
+        32,
+        3,
+        224,
+        224
+      ],
+      "batch_size": 32,
+      "config": {
+        "device": "cpu",
+        "warmup_iters": 5,
+        "measure_iters": 50,
+        "seed": 0,
+        "memory_note": "Peak memory is not measured on CPU/MPS in this version (value is null)."
+      },
+      "metrics": {
+        "mean_ms": 314.7269541399999,
+        "median_ms": 313.6591250000009,
+        "p90_ms": 317.3045044999981,
+        "p95_ms": 319.66696875000105,
+        "min_ms": 307.7857919999971,
+        "max_ms": 338.9498749999973,
+        "std_ms": 5.308262205772366,
+        "cold_start_ms": 330.54050000000143,
+        "per_image_mean_ms": 9.835217316874997,
+        "per_image_median_ms": 9.801847656250029,
+        "throughput_images_per_sec": 101.67543510037417,
+        "gpu_baseline_allocated_mb": null,
+        "gpu_peak_allocated_mb": null
+      },
+      "methodology": "Per-iteration wall-clock latency via time.perf_counter() around one forward pass under torch.inference_mode() with model.eval(). On CUDA, torch.cuda.synchronize() is called before starting and after finishing every timed iteration so asynchronous kernel execution is fully counted. Model loading, weight download, input creation and preprocessing are excluded. The first forward call (cold start) is timed separately and warm-up iterations are discarded; reported statistics describe steady-state latency of one batch. Throughput = batch_size / mean batch latency. Inputs are seeded random tensors of a fixed shape. Latency units: milliseconds; throughput units: images/second.",
+      "errors": [],
+      "warnings": [],
+      "experiment_id": "32d0e516104c",
+      "timestamp": "2026-11-09T11:55:13+00:00",
+      "schema_version": "1.0"
+    }
+  ]
+}
