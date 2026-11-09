@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Never commit weights, datasets, caches or large artifacts
+*.pt
+*.pth
+*.onnx
+*.engine
+*.safetensors
+.cache/
+data/
+# Benchmark outputs are local by default; commit curated files explicitly (git add -f)
+results/*
+!results/README.md
+!results/reference/
